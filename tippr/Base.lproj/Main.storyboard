@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="7bA-Fu-Lq3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PH7-20-2Us">
-                                <rect key="frame" x="20" y="110" width="87" height="21"/>
+                                <rect key="frame" x="20" y="110" width="121" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -61,7 +61,7 @@
                                 </connections>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="li0-aq-496">
-                                <rect key="frame" x="183" y="106" width="117" height="30"/>
+                                <rect key="frame" x="219" y="106" width="81" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
@@ -81,6 +81,13 @@
                             <outletCollection property="gestureRecognizers" destination="uk9-Ih-BS3" appends="YES" id="9K5-aN-qSq"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="klP-HJ-9gb">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="4zF-Qg-C5I" userLabel="Settings">
+                            <connections>
+                                <segue destination="UMP-TV-vLl" kind="push" id="JXG-Zq-X4L"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billField" destination="li0-aq-496" id="ly5-QM-psb"/>
                         <outlet property="tipControl" destination="r4y-6l-0Li" id="g3q-RC-vFa"/>
@@ -94,6 +101,39 @@
                         <action selector="onTap:" destination="BYZ-38-t0r" id="Njg-ey-kOd"/>
                     </connections>
                 </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="694" y="335"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="JbY-GR-d0e">
+            <objects>
+                <viewController id="UMP-TV-vLl" customClass="SettingsViewController" customModule="tippr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9mn-fT-QNp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="845-U9-U27"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qoa-Bs-Qmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042" y="335"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1hJ-or-A6u">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7bA-Fu-Lq3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZX4-I4-7Xe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="t0X-1x-dkJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uPD-s6-MS8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="162" y="335"/>
         </scene>

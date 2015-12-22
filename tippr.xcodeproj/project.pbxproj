@@ -14,6 +14,7 @@
 		FCBAC8D41C28D7E10067377E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCBAC8D21C28D7E10067377E /* LaunchScreen.storyboard */; };
 		FCBAC8DF1C28D7E10067377E /* tipprTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBAC8DE1C28D7E10067377E /* tipprTests.swift */; };
 		FCBAC8EA1C28D7E10067377E /* tipprUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBAC8E91C28D7E10067377E /* tipprUITests.swift */; };
+		FCBAC8F81C28F8E90067377E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBAC8F71C28F8E90067377E /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		FCBAC8E51C28D7E10067377E /* tipprUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tipprUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBAC8E91C28D7E10067377E /* tipprUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipprUITests.swift; sourceTree = "<group>"; };
 		FCBAC8EB1C28D7E10067377E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCBAC8F71C28F8E90067377E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		FCBAC8C81C28D7E10067377E /* tippr */ = {
 			isa = PBXGroup;
 			children = (
+				FCBAC8F71C28F8E90067377E /* SettingsViewController.swift */,
 				FCBAC8C91C28D7E10067377E /* AppDelegate.swift */,
 				FCBAC8CB1C28D7E10067377E /* ViewController.swift */,
 				FCBAC8CD1C28D7E10067377E /* Main.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				FCBAC8CC1C28D7E10067377E /* ViewController.swift in Sources */,
 				FCBAC8CA1C28D7E10067377E /* AppDelegate.swift in Sources */,
+				FCBAC8F81C28F8E90067377E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +407,7 @@
 				INFOPLIST_FILE = tippr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = codepath.tippr;
+				PRODUCT_BUNDLE_IDENTIFIER = codepath.tippr.ZachGlick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -415,7 +419,7 @@
 				INFOPLIST_FILE = tippr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = codepath.tippr;
+				PRODUCT_BUNDLE_IDENTIFIER = codepath.tippr.ZachGlick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
