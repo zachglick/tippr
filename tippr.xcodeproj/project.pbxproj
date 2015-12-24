@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC22B3281C2C80F7005E5586 /* EtiquetteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC22B3271C2C80F7005E5586 /* EtiquetteViewController.swift */; };
 		FCBAC8CA1C28D7E10067377E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBAC8C91C28D7E10067377E /* AppDelegate.swift */; };
 		FCBAC8CC1C28D7E10067377E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBAC8CB1C28D7E10067377E /* ViewController.swift */; };
 		FCBAC8CF1C28D7E10067377E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCBAC8CD1C28D7E10067377E /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC22B3271C2C80F7005E5586 /* EtiquetteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EtiquetteViewController.swift; sourceTree = "<group>"; };
 		FCBAC8C61C28D7E10067377E /* tippr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tippr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBAC8C91C28D7E10067377E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCBAC8CB1C28D7E10067377E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				FCBAC8C91C28D7E10067377E /* AppDelegate.swift */,
 				FCBAC8CB1C28D7E10067377E /* ViewController.swift */,
 				FCBAC8CD1C28D7E10067377E /* Main.storyboard */,
+				FC22B3271C2C80F7005E5586 /* EtiquetteViewController.swift */,
 				FCBAC8D01C28D7E10067377E /* Assets.xcassets */,
 				FCBAC8D21C28D7E10067377E /* LaunchScreen.storyboard */,
 				FCBAC8D51C28D7E10067377E /* Info.plist */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCBAC8CC1C28D7E10067377E /* ViewController.swift in Sources */,
+				FC22B3281C2C80F7005E5586 /* EtiquetteViewController.swift in Sources */,
 				FCBAC8CA1C28D7E10067377E /* AppDelegate.swift in Sources */,
 				FCBAC8F81C28F8E90067377E /* SettingsViewController.swift in Sources */,
 			);
@@ -491,6 +495,7 @@
 				FCBAC8F01C28D7E10067377E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCBAC8F11C28D7E10067377E /* Build configuration list for PBXNativeTarget "tipprTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +504,7 @@
 				FCBAC8F31C28D7E10067377E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCBAC8F41C28D7E10067377E /* Build configuration list for PBXNativeTarget "tipprUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +513,7 @@
 				FCBAC8F61C28D7E10067377E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
