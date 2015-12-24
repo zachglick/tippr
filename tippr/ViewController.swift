@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refresh", name: UIApplicationDidBecomeActiveNotification, object: nil)
-        print("View Did Load" )
         super.title = "tippr"
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"

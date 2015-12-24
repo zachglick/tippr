@@ -25,6 +25,7 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("heyooooo")
         let defaults = NSUserDefaults.standardUserDefaults()
         let index = defaults.integerForKey("index")
         for i in 0...2 {
@@ -32,6 +33,7 @@ class SettingsViewController: UIViewController {
         }
         tipStepper.value = defaults.doubleForKey("tip\(index)")
         settingsTipControl.selectedSegmentIndex = index
+        currencySwitch.on = defaults.boolForKey("curr")
         
         // Do any additional setup after loading the view.
     }
