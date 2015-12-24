@@ -84,10 +84,15 @@ class ViewController: UIViewController {
         
     }
 
+    func refresh(){
+        onEditingChanged(self)
+    }
+    
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
     }
     
+
     func doubleTip(stringTip: String) -> Double{
         
         var intStr: String = stringTip.substringToIndex(stringTip.endIndex.advancedBy(-1))
