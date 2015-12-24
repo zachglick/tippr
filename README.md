@@ -20,7 +20,8 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-* [ ] Can change default tip values as well
+* [X] Changing default tip values
+* [X] Restoring Defaults
 
 ## Video Walkthrough 
 
