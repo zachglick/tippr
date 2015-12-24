@@ -7,6 +7,9 @@
 //
 
 import UIKit
+var percents = [18.0 , 20.0, 25.0]
+var index = 1
+var curr = true
 
 class ViewController: UIViewController {
 
@@ -18,11 +21,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("blahhhh")
         super.title = "tippr"
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
-        
+        tipControl.selectedSegmentIndex = 1
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -30,10 +32,23 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func didMoveToParentViewController(parent: UIViewController?) {
+        /*if parent == nil {
+            print("bingooo")
+            
+        }*/
+        print(parent?.title)
+        for i in 0...2{
+            tipControl.setTitle(stringTip(percents[i]), forSegmentAtIndex: i)
+        }
+        tipControl.selectedSegmentIndex = index
+    }
+
 
     @IBAction func onEditingChanged(sender: AnyObject) {
         
-        var tipPercentages = [0.18, 0.20, 0.25]
+        var tipPercentages = [percents[0]/100, percents[1]/100, percents[2]/100]
         var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
         var billAmount = NSString(string: billField.text!).doubleValue
@@ -52,5 +67,15 @@ class ViewController: UIViewController {
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
     }
+    
+    func doubleTip(stringTip: String) -> Double{
+        var intStr: String = stringTip.substringToIndex(stringTip.endIndex.advancedBy(-1))
+        return NSString(string: intStr).doubleValue
+    }
+    func stringTip(doubleTip: Double) -> String {
+        return String(format:"%.0f",doubleTip) + "%"
+    }
+    
+    
 }
 

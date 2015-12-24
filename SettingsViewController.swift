@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var currencySwitch: UISwitch!
@@ -20,14 +21,16 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var defaultButton: UIButton!
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tipStepper.value = 50
-        var initVal: String = settingsTipControl.titleForSegmentAtIndex(settingsTipControl.selectedSegmentIndex)!
-        var initVal2: String = initVal.substringToIndex(initVal.endIndex.advancedBy(-1))
-        var initDouble = NSString(string: initVal2).doubleValue
-
-        print("initial \(initVal) final \(initVal2) double \(initDouble)")
+        settingsTipControl.selectedSegmentIndex = index
+        tipStepper.value = percents[index]
+        
+        for i in 0...2 {
+            settingsTipControl.setTitle(stringTip(percents[i]), forSegmentAtIndex: i)
+        }
         
 
         // Do any additional setup after loading the view.
@@ -40,29 +43,36 @@ class SettingsViewController: UIViewController {
     
     @IBAction func onValueChanged(sender: AnyObject) {
         
-        var initVal: String = settingsTipControl.titleForSegmentAtIndex(settingsTipControl.selectedSegmentIndex)!
-        var initVal2: String = initVal.substringToIndex(initVal.endIndex.advancedBy(-1))
+       // var initStr: String = settingsTipControl.titleForSegmentAtIndex(settingsTipControl.selectedSegmentIndex)!
+        //var initDouble = doubleTip(initStr)
         
-        var initDouble = NSString(string: initVal2).doubleValue
+        var newStr = stringTip(tipStepper.value)
+        settingsTipControl.setTitle(newStr, forSegmentAtIndex: settingsTipControl.selectedSegmentIndex)
+        percents[settingsTipControl.selectedSegmentIndex] = tipStepper.value
         
-        initDouble += 1.0
-        
-        var finalStr = String(format:"%.0f",initDouble) + "%"
-        settingsTipControl.setTitle(finalStr, forSegmentAtIndex: settingsTipControl.selectedSegmentIndex)
-        print(finalStr)
     }
    
     @IBAction func onSelectionChanged(sender: AnyObject) {
         var initStr: String = settingsTipControl.titleForSegmentAtIndex(settingsTipControl.selectedSegmentIndex)!
-        var intStr: String = initStr.substringToIndex(initStr.endIndex.advancedBy(-1))
-        var tipDouble = NSString(string: intStr).doubleValue
-        tipStepper.value = tipDouble
         
-        print("Stepper Value now \(tipDouble)")
+        var tipDouble = doubleTip(initStr)
+        tipStepper.value = tipDouble
+        index = settingsTipControl.selectedSegmentIndex
 
 
     }
 
+    @IBAction func onTouchUpInside(sender: AnyObject) {
+        percents = [18.0, 20.0, 25.0]
+        index = 1
+        curr = true
+        settingsTipControl.setTitle("18%", forSegmentAtIndex: 0)
+        settingsTipControl.setTitle("20%", forSegmentAtIndex: 1)
+        settingsTipControl.setTitle("25%", forSegmentAtIndex: 2)
+        settingsTipControl.selectedSegmentIndex = 1
+        tipStepper.value = 20.0
+        
+    }
     /*
     // MARK: - Navigation
 
@@ -72,5 +82,11 @@ class SettingsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    func doubleTip(stringTip: String) -> Double{
+        var intStr: String = stringTip.substringToIndex(stringTip.endIndex.advancedBy(-1))
+        return NSString(string: intStr).doubleValue
+    }
+    func stringTip(doubleTip: Double) -> String {
+        return String(format:"%.0f",doubleTip) + "%"
+    }
 }

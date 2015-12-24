@@ -136,6 +136,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Restore To Default"/>
+                                <connections>
+                                    <action selector="onTouchUpInside:" destination="UMP-TV-vLl" eventType="touchUpInside" id="7Vv-4K-3ZF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Local Currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Mp-sq-QNI">
                                 <rect key="frame" x="20" y="182" width="175" height="24"/>
