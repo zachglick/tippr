@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FC22B3281C2C80F7005E5586 /* EtiquetteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC22B3271C2C80F7005E5586 /* EtiquetteViewController.swift */; };
-		FC22B32A1C2C934D005E5586 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = FC22B3291C2C934D005E5586 /* README.md */; };
 		FCBAC8CA1C28D7E10067377E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBAC8C91C28D7E10067377E /* AppDelegate.swift */; };
 		FCBAC8CC1C28D7E10067377E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBAC8CB1C28D7E10067377E /* ViewController.swift */; };
 		FCBAC8CF1C28D7E10067377E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCBAC8CD1C28D7E10067377E /* Main.storyboard */; };
@@ -38,7 +37,6 @@
 
 /* Begin PBXFileReference section */
 		FC22B3271C2C80F7005E5586 /* EtiquetteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EtiquetteViewController.swift; sourceTree = "<group>"; };
-		FC22B3291C2C934D005E5586 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = tippr/README.md; sourceTree = "<group>"; };
 		FCBAC8C61C28D7E10067377E /* tippr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tippr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBAC8C91C28D7E10067377E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCBAC8CB1C28D7E10067377E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 				FCBAC8DD1C28D7E10067377E /* tipprTests */,
 				FCBAC8E81C28D7E10067377E /* tipprUITests */,
 				FCBAC8C71C28D7E10067377E /* Products */,
-				FC22B3291C2C934D005E5586 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -270,7 +267,6 @@
 			files = (
 				FCBAC8CC1C28D7E10067377E /* ViewController.swift in Sources */,
 				FC22B3281C2C80F7005E5586 /* EtiquetteViewController.swift in Sources */,
-				FC22B32A1C2C934D005E5586 /* README.md in Sources */,
 				FCBAC8CA1C28D7E10067377E /* AppDelegate.swift in Sources */,
 				FCBAC8F81C28F8E90067377E /* SettingsViewController.swift in Sources */,
 			);
