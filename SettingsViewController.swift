@@ -31,6 +31,7 @@ class SettingsViewController: UIViewController {
             settingsTipControl.setTitle(stringTip(defaults.doubleForKey("tip\(i)")), forSegmentAtIndex: i)
         }
         tipStepper.value = defaults.doubleForKey("tip\(index)")
+        settingsTipControl.selectedSegmentIndex = index
         
         // Do any additional setup after loading the view.
     }
@@ -79,6 +80,12 @@ class SettingsViewController: UIViewController {
         defaults.synchronize()
 
         
+    }
+
+    @IBAction func onCurrChanged(sender: AnyObject) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setBool(currencySwitch.on, forKey: "curr")
+        defaults.synchronize()        
     }
     /*
     // MARK: - Navigation

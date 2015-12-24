@@ -31,7 +31,6 @@ class ViewController: UIViewController {
         defaults.setBool(true, forKey: "curr")
         defaults.synchronize()
         // Do any additional setup after loading the view, typically from a nib.
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,20 +53,32 @@ class ViewController: UIViewController {
     @IBAction func onEditingChanged(sender: AnyObject) {
         
         let defaults = NSUserDefaults.standardUserDefaults()
-        
         var tipPercentages = [defaults.doubleForKey("tip0")/100, defaults.doubleForKey("tip1")/100, defaults.doubleForKey("tip2")/100]
         var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
         var billAmount = NSString(string: billField.text!).doubleValue
+        
+        
         var tip = billAmount * tipPercentage
         var total = tip + billAmount
         
-        
-        tipLabel.text = "$\(tip)"
-        totalLabel.text = "$\(total)"
-        
-        tipLabel.text = String(format: "$%.2f", tip)
-        tipLabel.text = String(format: "$%.2f", tip)
+        //if(false){
+        //tipLabel.text = "$\(tip)"
+        //totalLabel.text = "$\(total)"
+        if(defaults.boolForKey("curr") == false){
+            tipLabel.text = String(format: "$%.2f", tip)
+            totalLabel.text = String(format: "$%.2f", total)
+        }
+        else{
+            var formatter = NSNumberFormatter()
+            formatter.locale = NSLocale.currentLocale()
+            formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+            
+            //formatter.locale = NSLocale(localeIdentifier: NSLocaleIdentifier)
+            tipLabel.text = formatter.stringFromNumber(tip) // $123"
+            totalLabel.text = formatter.stringFromNumber(total)
+            
+        }
         
         
         
