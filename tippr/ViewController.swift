@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refresh", name: UIApplicationDidBecomeActiveNotification, object: nil)
+        print("View Did Load" )
         super.title = "tippr"
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
@@ -29,6 +31,7 @@ class ViewController: UIViewController {
         defaults.setDouble(25.0, forKey: "tip2")
         defaults.setInteger(1, forKey: "index")
         defaults.setBool(true, forKey: "curr")
+        defaults.setDouble(0.0, forKey: "bill")
         defaults.synchronize()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -54,10 +57,12 @@ class ViewController: UIViewController {
         
         let defaults = NSUserDefaults.standardUserDefaults()
         var tipPercentages = [defaults.doubleForKey("tip0")/100, defaults.doubleForKey("tip1")/100, defaults.doubleForKey("tip2")/100]
+       // print(tipPercentages)
+       // print(tipPercentages[tipControl.selectedSegmentIndex])
         var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
         var billAmount = NSString(string: billField.text!).doubleValue
-        
+        defaults.setDouble(billAmount, forKey: "bill")
         
         var tip = billAmount * tipPercentage
         var total = tip + billAmount
@@ -79,6 +84,7 @@ class ViewController: UIViewController {
             totalLabel.text = formatter.stringFromNumber(total)
             
         }
+        defaults.synchronize()
         
         
         
@@ -86,6 +92,10 @@ class ViewController: UIViewController {
 
     func refresh(){
         onEditingChanged(self)
+
+
+
+        
     }
     
     @IBAction func onTap(sender: AnyObject) {
