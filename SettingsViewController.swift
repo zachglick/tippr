@@ -25,14 +25,13 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        settingsTipControl.selectedSegmentIndex = index
-        tipStepper.value = percents[index]
-        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let index = defaults.integerForKey("index")
         for i in 0...2 {
-            settingsTipControl.setTitle(stringTip(percents[i]), forSegmentAtIndex: i)
+            settingsTipControl.setTitle(stringTip(defaults.doubleForKey("tip\(i)")), forSegmentAtIndex: i)
         }
+        tipStepper.value = defaults.doubleForKey("tip\(index)")
         
-
         // Do any additional setup after loading the view.
     }
 
@@ -43,12 +42,12 @@ class SettingsViewController: UIViewController {
     
     @IBAction func onValueChanged(sender: AnyObject) {
         
-       // var initStr: String = settingsTipControl.titleForSegmentAtIndex(settingsTipControl.selectedSegmentIndex)!
-        //var initDouble = doubleTip(initStr)
         
         var newStr = stringTip(tipStepper.value)
         settingsTipControl.setTitle(newStr, forSegmentAtIndex: settingsTipControl.selectedSegmentIndex)
-        percents[settingsTipControl.selectedSegmentIndex] = tipStepper.value
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setDouble(tipStepper.value, forKey: "tip\(settingsTipControl.selectedSegmentIndex)")
+        defaults.synchronize()
         
     }
    
@@ -57,20 +56,28 @@ class SettingsViewController: UIViewController {
         
         var tipDouble = doubleTip(initStr)
         tipStepper.value = tipDouble
-        index = settingsTipControl.selectedSegmentIndex
-
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(settingsTipControl.selectedSegmentIndex, forKey: "index")
+        defaults.synchronize()
 
     }
 
     @IBAction func onTouchUpInside(sender: AnyObject) {
-        percents = [18.0, 20.0, 25.0]
-        index = 1
-        curr = true
         settingsTipControl.setTitle("18%", forSegmentAtIndex: 0)
         settingsTipControl.setTitle("20%", forSegmentAtIndex: 1)
         settingsTipControl.setTitle("25%", forSegmentAtIndex: 2)
         settingsTipControl.selectedSegmentIndex = 1
         tipStepper.value = 20.0
+        
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setDouble(18.0, forKey: "tip0")
+        defaults.setDouble(20.0, forKey: "tip1")
+        defaults.setDouble(25.0, forKey: "tip2")
+        defaults.setInteger(1, forKey: "index")
+        defaults.setBool(true, forKey: "curr")
+        defaults.synchronize()
+
         
     }
     /*

@@ -7,9 +7,7 @@
 //
 
 import UIKit
-var percents = [18.0 , 20.0, 25.0]
-var index = 1
-var curr = true
+
 
 class ViewController: UIViewController {
 
@@ -25,7 +23,15 @@ class ViewController: UIViewController {
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
         tipControl.selectedSegmentIndex = 1
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setDouble(18.0, forKey: "tip0")
+        defaults.setDouble(20.0, forKey: "tip1")
+        defaults.setDouble(25.0, forKey: "tip2")
+        defaults.setInteger(1, forKey: "index")
+        defaults.setBool(true, forKey: "curr")
+        defaults.synchronize()
         // Do any additional setup after loading the view, typically from a nib.
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,22 +39,23 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func didMoveToParentViewController(parent: UIViewController?) {
-        /*if parent == nil {
-            print("bingooo")
-            
-        }*/
-        print(parent?.title)
-        for i in 0...2{
-            tipControl.setTitle(stringTip(percents[i]), forSegmentAtIndex: i)
-        }
-        tipControl.selectedSegmentIndex = index
-    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let defaults = NSUserDefaults.standardUserDefaults()
 
+        for i in 0...2 {
+            tipControl.setTitle(stringTip(defaults.doubleForKey("tip\(i)")), forSegmentAtIndex: i)
+        }
+        tipControl.selectedSegmentIndex = defaults.integerForKey("index")
+        onEditingChanged(billField)
+        
+    }
 
     @IBAction func onEditingChanged(sender: AnyObject) {
         
-        var tipPercentages = [percents[0]/100, percents[1]/100, percents[2]/100]
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        var tipPercentages = [defaults.doubleForKey("tip0")/100, defaults.doubleForKey("tip1")/100, defaults.doubleForKey("tip2")/100]
         var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
         var billAmount = NSString(string: billField.text!).doubleValue
@@ -62,6 +69,8 @@ class ViewController: UIViewController {
         tipLabel.text = String(format: "$%.2f", tip)
         tipLabel.text = String(format: "$%.2f", tip)
         
+        
+        
     }
 
     @IBAction func onTap(sender: AnyObject) {
@@ -69,10 +78,13 @@ class ViewController: UIViewController {
     }
     
     func doubleTip(stringTip: String) -> Double{
+        
         var intStr: String = stringTip.substringToIndex(stringTip.endIndex.advancedBy(-1))
         return NSString(string: intStr).doubleValue
     }
+    
     func stringTip(doubleTip: Double) -> String {
+        
         return String(format:"%.0f",doubleTip) + "%"
     }
     
