@@ -22,7 +22,10 @@ The following **additional** features are implemented:
 
 * [X] Changing default tip percentage *values*
 * [X] Choosing between light and dark color themes
+* [X] App Icon
 * [X] Option to Restore *all* parameters to default.
+* [ ] Tipping etiquette guide
+* [ ] Option to calculate fraction of bill/tip/total split between multiple people
 
 
 ## Video Walkthrough 
