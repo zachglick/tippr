@@ -25,7 +25,6 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("heyooooo")
         let defaults = NSUserDefaults.standardUserDefaults()
         let index = defaults.integerForKey("index")
         for i in 0...2 {

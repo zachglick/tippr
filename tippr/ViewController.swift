@@ -19,20 +19,35 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("View Did Load")
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refresh", name: UIApplicationDidBecomeActiveNotification, object: nil)
         super.title = "tippr"
-        tipLabel.text = "$0.00"
-        totalLabel.text = "$0.00"
-        tipControl.selectedSegmentIndex = 1
         let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setDouble(18.0, forKey: "tip0")
-        defaults.setDouble(20.0, forKey: "tip1")
-        defaults.setDouble(25.0, forKey: "tip2")
-        defaults.setInteger(1, forKey: "index")
-        defaults.setBool(true, forKey: "curr")
-        defaults.setDouble(0.0, forKey: "bill")
+
+        
+        if(defaults.objectForKey("tip0") == nil){
+            defaults.setDouble(18.0, forKey: "tip0")
+            defaults.setDouble(20.0, forKey: "tip1")
+            defaults.setDouble(25.0, forKey: "tip2")
+        }
+        if(defaults.objectForKey("index") == nil){
+            defaults.setInteger(1, forKey: "index")
+        }
+        tipControl.selectedSegmentIndex = defaults.integerForKey("index")
+        if(defaults.objectForKey("curr") == nil){
+            defaults.setBool(true, forKey: "curr")
+        }
+        if(defaults.objectForKey("bill") == nil || defaults.doubleForKey("bill") == 0.0){
+            defaults.setDouble(0.0, forKey: "bill")
+            tipLabel.text = "$0.00"
+            totalLabel.text = "$0.00"
+        }
+        else{
+            billField.text = String(format: "%g", defaults.doubleForKey("bill"))
+        }
         defaults.synchronize()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,69 +57,74 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        print("View Will Appear")
         let defaults = NSUserDefaults.standardUserDefaults()
-
+        
+        if(defaults.objectForKey("oldDate") != nil){
+            let interval = NSDate().timeIntervalSinceDate(defaults.objectForKey("oldDate") as! NSDate!)
+            if(interval > 600.0){
+                defaults.setDouble(0.0, forKey: "bill")
+                tipLabel.text = "$0.00"
+                totalLabel.text = "$0.00"
+                billField.text = ""
+            }
+            
+        }
+        
+        
         for i in 0...2 {
             tipControl.setTitle(stringTip(defaults.doubleForKey("tip\(i)")), forSegmentAtIndex: i)
         }
         tipControl.selectedSegmentIndex = defaults.integerForKey("index")
+        
         onEditingChanged(billField)
         
     }
 
+
     @IBAction func onEditingChanged(sender: AnyObject) {
-        
         let defaults = NSUserDefaults.standardUserDefaults()
         var tipPercentages = [defaults.doubleForKey("tip0")/100, defaults.doubleForKey("tip1")/100, defaults.doubleForKey("tip2")/100]
-       // print(tipPercentages)
-       // print(tipPercentages[tipControl.selectedSegmentIndex])
-        var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
+        let tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
-        var billAmount = NSString(string: billField.text!).doubleValue
+        let billAmount = NSString(string: billField.text!).doubleValue
         defaults.setDouble(billAmount, forKey: "bill")
         
-        var tip = billAmount * tipPercentage
-        var total = tip + billAmount
+        let tip = billAmount * tipPercentage
+        let total = tip + billAmount
         
-        //if(false){
-        //tipLabel.text = "$\(tip)"
-        //totalLabel.text = "$\(total)"
+        
         if(defaults.boolForKey("curr") == false){
             tipLabel.text = String(format: "$%.2f", tip)
             totalLabel.text = String(format: "$%.2f", total)
         }
         else{
-            var formatter = NSNumberFormatter()
+            let formatter = NSNumberFormatter()
             formatter.locale = NSLocale.currentLocale()
             formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
             
-            //formatter.locale = NSLocale(localeIdentifier: NSLocaleIdentifier)
+            
             tipLabel.text = formatter.stringFromNumber(tip) // $123"
             totalLabel.text = formatter.stringFromNumber(total)
             
         }
         defaults.synchronize()
         
-        
-        
     }
 
     func refresh(){
+        print("Refresh")
         onEditingChanged(self)
-
-
-
-        
+   
     }
     
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
     }
     
-
     func doubleTip(stringTip: String) -> Double{
         
-        var intStr: String = stringTip.substringToIndex(stringTip.endIndex.advancedBy(-1))
+        let intStr: String = stringTip.substringToIndex(stringTip.endIndex.advancedBy(-1))
         return NSString(string: intStr).doubleValue
     }
     
@@ -112,7 +132,5 @@ class ViewController: UIViewController {
         
         return String(format:"%.0f",doubleTip) + "%"
     }
-    
-    
 }
 
