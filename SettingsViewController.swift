@@ -45,7 +45,7 @@ class SettingsViewController: UIViewController {
     @IBAction func onValueChanged(sender: AnyObject) {
         
         
-        var newStr = stringTip(tipStepper.value)
+        let newStr = stringTip(tipStepper.value)
         settingsTipControl.setTitle(newStr, forSegmentAtIndex: settingsTipControl.selectedSegmentIndex)
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setDouble(tipStepper.value, forKey: "tip\(settingsTipControl.selectedSegmentIndex)")
@@ -54,9 +54,9 @@ class SettingsViewController: UIViewController {
     }
    
     @IBAction func onSelectionChanged(sender: AnyObject) {
-        var initStr: String = settingsTipControl.titleForSegmentAtIndex(settingsTipControl.selectedSegmentIndex)!
+        let initStr: String = settingsTipControl.titleForSegmentAtIndex(settingsTipControl.selectedSegmentIndex)!
         
-        var tipDouble = doubleTip(initStr)
+        let tipDouble = doubleTip(initStr)
         tipStepper.value = tipDouble
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setInteger(settingsTipControl.selectedSegmentIndex, forKey: "index")
@@ -78,6 +78,7 @@ class SettingsViewController: UIViewController {
         defaults.setDouble(25.0, forKey: "tip2")
         defaults.setInteger(1, forKey: "index")
         defaults.setBool(true, forKey: "curr")
+        currencySwitch.setOn(true, animated: true)
         defaults.synchronize()
 
         
@@ -98,7 +99,7 @@ class SettingsViewController: UIViewController {
     }
     */
     func doubleTip(stringTip: String) -> Double{
-        var intStr: String = stringTip.substringToIndex(stringTip.endIndex.advancedBy(-1))
+        let intStr: String = stringTip.substringToIndex(stringTip.endIndex.advancedBy(-1))
         return NSString(string: intStr).doubleValue
     }
     func stringTip(doubleTip: Double) -> String {

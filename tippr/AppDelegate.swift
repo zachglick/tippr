@@ -31,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let defaults = NSUserDefaults.standardUserDefaults()
         NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey:"oldDate")
         defaults.synchronize()
-        print("Old Date \(defaults.objectForKey("oldDate"))")
         
         
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.

@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
+    @IBOutlet weak var animatedView: UIView!
+    @IBOutlet weak var AnimatedView2: UIView!
+    @IBOutlet weak var darkView: UIView!
     
     
     override func viewDidLoad() {
@@ -47,6 +50,29 @@ class ViewController: UIViewController {
         }
         defaults.synchronize()
         billField.becomeFirstResponder()
+        let currsym = NSLocale.currentLocale().objectForKey(NSLocaleCurrencySymbol) as? String
+        if(defaults.boolForKey("curr") == true){
+            billField.placeholder = currsym
+        }
+        else{
+            billField.placeholder = "$"
+            
+        }
+        defaults.synchronize()
+        let darkColor = UIColor(red: 89/255.0, green: 119/255.0, blue: 89/255, alpha: 1.0)
+        let lightColor = UIColor(red: 189/255.0, green: 216/255.0, blue: 189/255, alpha: 1.0)
+        
+        darkView.backgroundColor = darkColor
+        tipControl.tintColor = darkColor
+        
+        self.navigationItem.leftBarButtonItem?.tintColor = darkColor
+        self.navigationItem.rightBarButtonItem?.tintColor = darkColor
+        billField.textColor = darkColor
+        
+        self.view.backgroundColor = lightColor
+        AnimatedView2.backgroundColor = lightColor
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
         
     }
@@ -70,6 +96,7 @@ class ViewController: UIViewController {
                 totalLabel.text = "$0.00"
                 billField.text = ""
             }
+            print("interval \(interval/60.0) minutes")
             
         }
         
@@ -78,7 +105,15 @@ class ViewController: UIViewController {
             tipControl.setTitle(stringTip(defaults.doubleForKey("tip\(i)")), forSegmentAtIndex: i)
         }
         tipControl.selectedSegmentIndex = defaults.integerForKey("index")
-        
+        let currsym = NSLocale.currentLocale().objectForKey(NSLocaleCurrencySymbol) as? String
+        if(defaults.boolForKey("curr") == true){
+            billField.placeholder = currsym
+        }
+        else{
+            billField.placeholder = "$"
+
+        }
+        defaults.synchronize()
         onEditingChanged(billField)
         
     }
@@ -88,6 +123,15 @@ class ViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         var tipPercentages = [defaults.doubleForKey("tip0")/100, defaults.doubleForKey("tip1")/100, defaults.doubleForKey("tip2")/100]
         let tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
+        //self.firstView.alpha = 0
+        if(billField.text != ""){
+            UIView.animateWithDuration(1.0, animations:{
+                    print("true")
+                    self.animatedView.center.y = 425
+                    self.AnimatedView2.center.y = 125
+                
+            })
+        }
         
         let billAmount = NSString(string: billField.text!).doubleValue
         defaults.setDouble(billAmount, forKey: "bill")
@@ -105,12 +149,11 @@ class ViewController: UIViewController {
             formatter.locale = NSLocale.currentLocale()
             formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
             
-            
-            tipLabel.text = formatter.stringFromNumber(tip) // $123"
+            tipLabel.text = formatter.stringFromNumber(tip)
             totalLabel.text = formatter.stringFromNumber(total)
             
         }
-        defaults.synchronize()
+
         
     }
 
