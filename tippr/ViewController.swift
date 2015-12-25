@@ -46,6 +46,7 @@ class ViewController: UIViewController {
             billField.text = String(format: "%g", defaults.doubleForKey("bill"))
         }
         defaults.synchronize()
+        billField.becomeFirstResponder()
         // Do any additional setup after loading the view, typically from a nib.
         
     }
@@ -57,6 +58,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+
         print("View Will Appear")
         let defaults = NSUserDefaults.standardUserDefaults()
         
