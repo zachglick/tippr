@@ -20,9 +20,10 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-* [X] Changing default tip values
-* [X] Restoring Defaults
+* [X] Changing default tip percentage *values*
 * [X] Choosing between light and dark color themes
+* [X] Option to Restore *all* parameters to default.
+
 
 ## Video Walkthrough 
 
