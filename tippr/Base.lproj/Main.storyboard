@@ -115,7 +115,9 @@
                         <outlet property="darkView" destination="gi1-cG-84F" id="HtO-EA-fAg"/>
                         <outlet property="tipControl" destination="r4y-6l-0Li" id="g3q-RC-vFa"/>
                         <outlet property="tipLabel" destination="a2d-OX-1Xk" id="ucd-qK-vUT"/>
+                        <outlet property="tipMarkerLabel" destination="FfR-yi-KBa" id="PSi-e6-T6S"/>
                         <outlet property="totalLabel" destination="kbK-ur-eiG" id="LuB-nP-kcI"/>
+                        <outlet property="totalMarkerLabel" destination="2up-Ms-RBt" id="qfh-ff-lEB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -174,6 +176,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="TAI-xM-sWr">
                                 <rect key="frame" x="251" y="216" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onLightChanged:" destination="UMP-TV-vLl" eventType="valueChanged" id="ycC-pj-yi9"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="Jog-0s-7iU">
                                 <rect key="frame" x="251" y="155" width="51" height="31"/>
@@ -194,8 +199,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="845-U9-U27"/>
                     <connections>
+                        <outlet property="currLabel" destination="2Mp-sq-QNI" id="mRt-2F-iJa"/>
                         <outlet property="currencySwitch" destination="Jog-0s-7iU" id="rex-Fz-TlE"/>
                         <outlet property="defaultButton" destination="Lpf-Gk-P59" id="65p-nI-Dwc"/>
+                        <outlet property="lightLabel" destination="ACk-ek-BZr" id="sdB-no-exI"/>
+                        <outlet property="lightSwitch" destination="TAI-xM-sWr" id="Pbp-Vv-K1H"/>
                         <outlet property="settingsTipControl" destination="Vsm-iN-gQl" id="3fQ-HB-U1w"/>
                         <outlet property="tipStepper" destination="Fsz-gu-1HO" id="egq-Kk-Du3"/>
                     </connections>

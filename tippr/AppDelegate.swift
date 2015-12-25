@@ -54,7 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let defaults = NSUserDefaults.standardUserDefaults()
         NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey:"oldDate")
         defaults.synchronize()
-        print("Old Date \(defaults.objectForKey("oldDate"))")
     }
 
 

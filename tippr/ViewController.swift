@@ -18,7 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var animatedView: UIView!
     @IBOutlet weak var AnimatedView2: UIView!
     @IBOutlet weak var darkView: UIView!
-    
+    @IBOutlet weak var tipMarkerLabel: UILabel!
+    @IBOutlet weak var totalMarkerLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +49,15 @@ class ViewController: UIViewController {
         else{
             billField.text = String(format: "%g", defaults.doubleForKey("bill"))
         }
+        if(defaults.objectForKey("defLight") == nil){
+            defaults.setBool(true, forKey: "defLight")
+        }
         defaults.synchronize()
+        
+        
+        
         billField.becomeFirstResponder()
+        
         let currsym = NSLocale.currentLocale().objectForKey(NSLocaleCurrencySymbol) as? String
         if(defaults.boolForKey("curr") == true){
             billField.placeholder = currsym
@@ -59,18 +67,10 @@ class ViewController: UIViewController {
             
         }
         defaults.synchronize()
-        let darkColor = UIColor(red: 89/255.0, green: 119/255.0, blue: 89/255, alpha: 1.0)
-        let lightColor = UIColor(red: 189/255.0, green: 216/255.0, blue: 189/255, alpha: 1.0)
         
-        darkView.backgroundColor = darkColor
-        tipControl.tintColor = darkColor
         
-        self.navigationItem.leftBarButtonItem?.tintColor = darkColor
-        self.navigationItem.rightBarButtonItem?.tintColor = darkColor
-        billField.textColor = darkColor
         
-        self.view.backgroundColor = lightColor
-        AnimatedView2.backgroundColor = lightColor
+        refreshView()
         
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -88,9 +88,11 @@ class ViewController: UIViewController {
         print("View Will Appear")
         let defaults = NSUserDefaults.standardUserDefaults()
         
+        
         if(defaults.objectForKey("oldDate") != nil){
             let interval = NSDate().timeIntervalSinceDate(defaults.objectForKey("oldDate") as! NSDate!)
             if(interval > 600.0){
+                print("TIME OUT")
                 defaults.setDouble(0.0, forKey: "bill")
                 tipLabel.text = "$0.00"
                 totalLabel.text = "$0.00"
@@ -114,6 +116,8 @@ class ViewController: UIViewController {
 
         }
         defaults.synchronize()
+        refreshView()
+
         onEditingChanged(billField)
         
     }
@@ -121,12 +125,14 @@ class ViewController: UIViewController {
 
     @IBAction func onEditingChanged(sender: AnyObject) {
         let defaults = NSUserDefaults.standardUserDefaults()
+        NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey:"oldDate")
+        defaults.synchronize()
+        
         var tipPercentages = [defaults.doubleForKey("tip0")/100, defaults.doubleForKey("tip1")/100, defaults.doubleForKey("tip2")/100]
         let tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         //self.firstView.alpha = 0
         if(billField.text != ""){
             UIView.animateWithDuration(1.0, animations:{
-                    print("true")
                     self.animatedView.center.y = 425
                     self.AnimatedView2.center.y = 125
                 
@@ -176,6 +182,56 @@ class ViewController: UIViewController {
     func stringTip(doubleTip: Double) -> String {
         
         return String(format:"%.0f",doubleTip) + "%"
+    }
+    
+    func refreshView() {
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        let darkColor = UIColor(red: 89/255.0, green: 119/255.0, blue: 89/255, alpha: 1.0)
+        let lightColor = UIColor(red: 189/255.0, green: 216/255.0, blue: 189/255, alpha: 1.0)
+        if(defaults.boolForKey("defLight") == true){
+            self.navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
+            billField.keyboardAppearance = .Light
+            darkView.backgroundColor = darkColor
+            tipControl.tintColor = darkColor
+            
+            self.navigationItem.leftBarButtonItem?.tintColor = darkColor
+            self.navigationItem.rightBarButtonItem?.tintColor = darkColor
+            billField.textColor = darkColor
+            
+            self.view.backgroundColor = lightColor
+            AnimatedView2.backgroundColor = lightColor
+            
+            totalLabel.textColor = UIColor.whiteColor()
+            tipLabel.textColor = UIColor.whiteColor()
+            totalMarkerLabel.textColor = UIColor.whiteColor()
+            tipMarkerLabel.textColor = UIColor.whiteColor()
+
+            
+        }
+        else{
+            self.navigationController?.navigationBar.barTintColor = UIColor.grayColor()
+            billField.keyboardAppearance = .Dark
+            darkView.backgroundColor = lightColor
+            tipControl.tintColor = lightColor
+            
+            self.navigationItem.leftBarButtonItem?.tintColor = lightColor
+            self.navigationItem.rightBarButtonItem?.tintColor = lightColor
+            billField.textColor = lightColor
+            
+            self.view.backgroundColor = darkColor
+            AnimatedView2.backgroundColor = darkColor
+            
+            totalLabel.textColor = UIColor.grayColor()
+            tipLabel.textColor = UIColor.grayColor()
+            totalMarkerLabel.textColor = UIColor.grayColor()
+            tipMarkerLabel.textColor = UIColor.grayColor()
+            
+            
+        }
+
+    
     }
 }
 

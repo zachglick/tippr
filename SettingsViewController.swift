@@ -12,6 +12,7 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var currencySwitch: UISwitch!
+    @IBOutlet weak var lightSwitch: UISwitch!
     
     @IBOutlet weak var tipStepper:
         UIStepper!
@@ -19,6 +20,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsTipControl: UISegmentedControl!
     
     @IBOutlet weak var defaultButton: UIButton!
+    @IBOutlet weak var currLabel: UILabel!
+    @IBOutlet weak var lightLabel: UILabel!
     
     
     
@@ -33,7 +36,9 @@ class SettingsViewController: UIViewController {
         tipStepper.value = defaults.doubleForKey("tip\(index)")
         settingsTipControl.selectedSegmentIndex = index
         currencySwitch.on = defaults.boolForKey("curr")
-        
+        lightSwitch.on = defaults.boolForKey("defLight")
+        super.title = "Settings"
+        refreshView()
         // Do any additional setup after loading the view.
     }
 
@@ -79,7 +84,10 @@ class SettingsViewController: UIViewController {
         defaults.setInteger(1, forKey: "index")
         defaults.setBool(true, forKey: "curr")
         currencySwitch.setOn(true, animated: true)
+        defaults.setBool(true, forKey: "defLight")
+        lightSwitch.setOn(true, animated: true)
         defaults.synchronize()
+        refreshView()
 
         
     }
@@ -88,6 +96,13 @@ class SettingsViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setBool(currencySwitch.on, forKey: "curr")
         defaults.synchronize()        
+    }
+    @IBAction func onLightChanged(sender: AnyObject) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setBool(lightSwitch.on, forKey: "defLight")
+        defaults.synchronize()
+        print(defaults.boolForKey("defLight"))
+        refreshView()
     }
     /*
     // MARK: - Navigation
@@ -104,5 +119,40 @@ class SettingsViewController: UIViewController {
     }
     func stringTip(doubleTip: Double) -> String {
         return String(format:"%.0f",doubleTip) + "%"
+    }
+    
+    func refreshView() {
+        print("View Refreshed!")
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let darkColor = UIColor(red: 89/255.0, green: 119/255.0, blue: 89/255, alpha: 1.0)
+        let lightColor = UIColor(red: 189/255.0, green: 216/255.0, blue: 189/255, alpha: 1.0)
+        
+        if(defaults.boolForKey("defLight") == true){
+            self.navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
+            self.view.backgroundColor = lightColor
+            settingsTipControl.tintColor = darkColor
+            tipStepper.tintColor = darkColor
+            defaultButton.tintColor = darkColor
+            self.navigationController?.navigationBar.tintColor = darkColor
+            currencySwitch.onTintColor = darkColor
+            lightSwitch.onTintColor = darkColor
+            
+            currLabel.textColor = darkColor
+            lightLabel.textColor = darkColor
+            
+        }
+        else{
+            self.navigationController?.navigationBar.barTintColor = UIColor.grayColor()
+            self.view.backgroundColor = darkColor
+            settingsTipControl.tintColor = lightColor
+            tipStepper.tintColor = lightColor
+            defaultButton.tintColor = lightColor
+            self.navigationController?.navigationBar.tintColor = lightColor
+            currencySwitch.onTintColor = lightColor
+            lightSwitch.onTintColor = lightColor
+            
+            currLabel.textColor = lightColor
+            lightLabel.textColor = lightColor
+        }
     }
 }
