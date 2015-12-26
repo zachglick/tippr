@@ -24,15 +24,16 @@ The following **additional** features are implemented:
 * [X] Choosing between light and dark color themes
 * [X] App Icon
 * [X] Option to restore *all* parameters to default.
+* [X] Option to calculate fraction of bill/tip/total split between multiple people
 * [ ] Tipping etiquette guide
-* [ ] Option to calculate fraction of bill/tip/total split between multiple people
+
 
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/CRMAZZZ.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/LxNIZkF.webm' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
