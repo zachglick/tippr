@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FC22B3281C2C80F7005E5586 /* EtiquetteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC22B3271C2C80F7005E5586 /* EtiquetteViewController.swift */; };
+		FCA19B521C2E1777007689E5 /* man13.svg in Resources */ = {isa = PBXBuildFile; fileRef = FCA19B511C2E1777007689E5 /* man13.svg */; };
 		FCBAC8CA1C28D7E10067377E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBAC8C91C28D7E10067377E /* AppDelegate.swift */; };
 		FCBAC8CC1C28D7E10067377E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBAC8CB1C28D7E10067377E /* ViewController.swift */; };
 		FCBAC8CF1C28D7E10067377E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCBAC8CD1C28D7E10067377E /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		FC22B3271C2C80F7005E5586 /* EtiquetteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EtiquetteViewController.swift; sourceTree = "<group>"; };
+		FCA19B511C2E1777007689E5 /* man13.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = man13.svg; path = ../../../Downloads/man13.svg; sourceTree = "<group>"; };
 		FCBAC8C61C28D7E10067377E /* tippr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tippr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBAC8C91C28D7E10067377E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCBAC8CB1C28D7E10067377E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		FCBAC8C81C28D7E10067377E /* tippr */ = {
 			isa = PBXGroup;
 			children = (
+				FCA19B511C2E1777007689E5 /* man13.svg */,
 				FCBAC8F71C28F8E90067377E /* SettingsViewController.swift */,
 				FCBAC8C91C28D7E10067377E /* AppDelegate.swift */,
 				FCBAC8CB1C28D7E10067377E /* ViewController.swift */,
@@ -241,6 +244,7 @@
 				FCBAC8D41C28D7E10067377E /* LaunchScreen.storyboard in Resources */,
 				FCBAC8D11C28D7E10067377E /* Assets.xcassets in Resources */,
 				FCBAC8CF1C28D7E10067377E /* Main.storyboard in Resources */,
+				FCA19B521C2E1777007689E5 /* man13.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

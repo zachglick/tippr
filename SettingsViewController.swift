@@ -86,6 +86,7 @@ class SettingsViewController: UIViewController {
         currencySwitch.setOn(true, animated: true)
         defaults.setBool(true, forKey: "defLight")
         lightSwitch.setOn(true, animated: true)
+        defaults.setInteger(1, forKey: "counter")
         defaults.synchronize()
         refreshView()
 

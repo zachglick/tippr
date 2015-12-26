@@ -84,9 +84,37 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👤" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tV2-3n-P84">
+                                                <rect key="frame" x="300" y="8" width="120" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" id="3EI-N7-upk">
+                                <rect key="frame" x="-114" y="64" width="114" height="121"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👤" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DKA-fa-y0a">
+                                        <rect key="frame" x="0.0" y="25" width="114" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" id="U7V-cc-Dpi">
+                                        <rect key="frame" x="10" y="54" width="94" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="onCounterChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="bLU-4m-qRY"/>
+                                            <action selector="onEditingChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="D9Z-XH-H4B"/>
+                                        </connections>
+                                    </stepper>
                                 </subviews>
                             </view>
                         </subviews>
@@ -112,6 +140,10 @@
                         <outlet property="AnimatedView2" destination="2BZ-YA-Su4" id="kuQ-uw-vbm"/>
                         <outlet property="animatedView" destination="iBA-Zu-cGl" id="fAd-Il-Ca9"/>
                         <outlet property="billField" destination="li0-aq-496" id="ly5-QM-psb"/>
+                        <outlet property="counterLabel" destination="DKA-fa-y0a" id="bVi-MH-bxi"/>
+                        <outlet property="counterLabel2" destination="tV2-3n-P84" id="e8h-Vb-fvb"/>
+                        <outlet property="counterStepper" destination="U7V-cc-Dpi" id="DLx-az-B2o"/>
+                        <outlet property="counterView" destination="3EI-N7-upk" id="iMe-yk-cpn"/>
                         <outlet property="darkView" destination="gi1-cG-84F" id="HtO-EA-fAg"/>
                         <outlet property="tipControl" destination="r4y-6l-0Li" id="g3q-RC-vFa"/>
                         <outlet property="tipLabel" destination="a2d-OX-1Xk" id="ucd-qK-vUT"/>

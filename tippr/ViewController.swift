@@ -20,6 +20,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var darkView: UIView!
     @IBOutlet weak var tipMarkerLabel: UILabel!
     @IBOutlet weak var totalMarkerLabel: UILabel!
+    @IBOutlet weak var counterView: UIView!
+    @IBOutlet weak var counterStepper: UIStepper!
+    @IBOutlet weak var counterLabel: UILabel!
+    @IBOutlet weak var counterLabel2: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +56,9 @@ class ViewController: UIViewController {
         if(defaults.objectForKey("defLight") == nil){
             defaults.setBool(true, forKey: "defLight")
         }
+        
+        defaults.setInteger(1, forKey: "counter")
+        
         defaults.synchronize()
         
         
@@ -68,7 +75,8 @@ class ViewController: UIViewController {
         }
         defaults.synchronize()
         
-        
+
+        makeCounterLabel()
         
         refreshView()
         
@@ -94,6 +102,11 @@ class ViewController: UIViewController {
             if(interval > 600.0){
                 print("TIME OUT")
                 defaults.setDouble(0.0, forKey: "bill")
+                defaults.setInteger(1, forKey: "counter")
+                defaults.setBool(true, forKey: "defLight")
+                defaults.setBool(true, forKey: "curr")
+                defaults.setInteger(1, forKey: "index")
+                defaults.synchronize()
                 tipLabel.text = "$0.00"
                 totalLabel.text = "$0.00"
                 billField.text = ""
@@ -117,7 +130,7 @@ class ViewController: UIViewController {
         }
         defaults.synchronize()
         refreshView()
-
+        makeCounterLabel()
         onEditingChanged(billField)
         
     }
@@ -135,15 +148,34 @@ class ViewController: UIViewController {
             UIView.animateWithDuration(1.0, animations:{
                     self.animatedView.center.y = 425
                     self.AnimatedView2.center.y = 125
-                
+                    self.counterView.center.x = 57
+                if(defaults.integerForKey("counter") > 1){
+                    print("trueue \(defaults.integerForKey("counter"))"  )
+                    self.counterLabel2.center.x = 260
+                }
             })
+        }
+        if(billField.text == ""){
+            UIView.animateWithDuration(1.0, animations:{
+                self.animatedView.center.y = 700
+                self.AnimatedView2.center.y = 214
+                self.counterView.center.x = -57
+
+            })
+
+        }
+        if(defaults.integerForKey("counter") == 1 && billField.text != ""){
+            UIView.animateWithDuration(1.0, animations:{
+            self.counterLabel2.center.x = 360
+            })
+
         }
         
         let billAmount = NSString(string: billField.text!).doubleValue
         defaults.setDouble(billAmount, forKey: "bill")
         
-        let tip = billAmount * tipPercentage
-        let total = tip + billAmount
+        let tip = billAmount * tipPercentage / Double(defaults.integerForKey("counter"))
+        let total = tip + billAmount / Double(defaults.integerForKey("counter"))
         
         
         if(defaults.boolForKey("curr") == false){
@@ -207,6 +239,17 @@ class ViewController: UIViewController {
             tipLabel.textColor = UIColor.whiteColor()
             totalMarkerLabel.textColor = UIColor.whiteColor()
             tipMarkerLabel.textColor = UIColor.whiteColor()
+            counterStepper.tintColor = darkColor
+            counterLabel.textColor = darkColor
+            counterLabel2.textColor = lightColor
+
+            billField.tintColor = darkColor
+            
+            counterLabel2.shadowColor = lightColor
+            counterLabel2.shadowOffset = CGSize(width: -1, height: -1)
+            counterLabel.shadowOffset = CGSize(width: 0, height: 0)
+            
+            
 
             
         }
@@ -227,11 +270,43 @@ class ViewController: UIViewController {
             tipLabel.textColor = UIColor.grayColor()
             totalMarkerLabel.textColor = UIColor.grayColor()
             tipMarkerLabel.textColor = UIColor.grayColor()
+            counterStepper.tintColor = lightColor
+            counterLabel.textColor = lightColor
+            counterLabel2.textColor = darkColor
+
+            billField.tintColor = lightColor
+            
+            
+            counterLabel.shadowColor = lightColor
+            counterLabel.shadowOffset = CGSize(width: -1, height: -1)
+            counterLabel2.shadowOffset = CGSize(width: 0, height: 0)
+    
             
             
         }
 
     
+    }
+    
+    func makeCounterLabel() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        counterLabel.text = ""
+        let count = defaults.integerForKey("counter")
+        if(count < 5){
+            for i in 1...count{
+                counterLabel.text?.appendContentsOf("👤")
+            }
+        }
+        else{
+            counterLabel.text = "\(count) 👤"
+        }
+        counterLabel2.text = counterLabel.text
+    }
+    @IBAction func onCounterChanged(sender: AnyObject) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(Int(round(counterStepper.value)), forKey: "counter")
+        makeCounterLabel()
+
     }
 }
 
