@@ -4,7 +4,7 @@
 
 Submitted by: **Zach Glick**
 
-Time spent: **7** hours spent in total
+Time spent: **8** hours spent in total
 
 ## User Stories
 
@@ -23,7 +23,7 @@ The following **additional** features are implemented:
 * [X] Changing default tip percentage *values*
 * [X] Choosing between light and dark color themes
 * [X] App Icon
-* [X] Option to Restore *all* parameters to default.
+* [X] Option to restore *all* parameters to default.
 * [ ] Tipping etiquette guide
 * [ ] Option to calculate fraction of bill/tip/total split between multiple people
 
