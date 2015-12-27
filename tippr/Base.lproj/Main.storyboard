@@ -251,11 +251,188 @@
                     <view key="view" contentMode="scaleToFill" id="7po-MW-n8H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="zef-nP-zfY">
+                                <rect key="frame" x="-15" y="120" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipping By Region" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nIl-N6-kQN">
+                                        <rect key="frame" x="8" y="25" width="304" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.225571365" blue="0.2781592665" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="H3K-sV-rcF" appends="YES" id="T1R-oZ-3I1"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="3Ep-SX-eyd">
+                                <rect key="frame" x="-15" y="200" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Tipping" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hfW-Ta-zAt">
+                                        <rect key="frame" x="8" y="25" width="304" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.225571365" blue="0.2781592665" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mcO-lv-iW4" appends="YES" id="vkl-nn-LLr"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="WXg-ra-Uek">
+                                <rect key="frame" x="-15" y="280" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other Tipping Customs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zMB-2F-TV2">
+                                        <rect key="frame" x="8" y="25" width="304" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.225571365" blue="0.2781592665" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Qz7-d5-3Nd" appends="YES" id="mGC-Kw-pTp"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" id="aCk-dF-BFa">
+                                <rect key="frame" x="-15" y="360" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label for Point" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iCJ-1A-vKK">
+                                        <rect key="frame" x="8" y="25" width="304" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.225571365" blue="0.2781592665" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="o1b-rg-kvP" appends="YES" id="Kuj-jH-g2B"/>
+                                </connections>
+                            </view>
+                            <view alpha="0.0" contentMode="scaleToFill" id="mDg-ez-sQg">
+                                <rect key="frame" x="0.0" y="190" width="320" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wza-bj-gCY">
+                                        <rect key="frame" x="8" y="0.0" width="304" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">Tipping is very customary in the US. In other places like Europe, it's factored into the bill. Some places like X see tipping as impolite</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                            <view alpha="0.0" contentMode="scaleToFill" id="FrD-68-h0q">
+                                <rect key="frame" x="0.0" y="270" width="320" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qPz-lX-hLN">
+                                        <rect key="frame" x="8" y="0.0" width="304" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                            <view alpha="0.0" contentMode="scaleToFill" id="01e-Oz-IKk">
+                                <rect key="frame" x="0.0" y="350" width="320" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ISj-hj-fG5">
+                                        <rect key="frame" x="8" y="0.0" width="304" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                            <view alpha="0.0" contentMode="scaleToFill" id="tsG-g5-EGt">
+                                <rect key="frame" x="0.0" y="430" width="320" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NJa-9Q-003">
+                                        <rect key="frame" x="8" y="0.0" width="304" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4tm-bn-VFc" appends="YES" id="j80-1j-VQh"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="EuM-aE-Vz5"/>
+                    <connections>
+                        <outlet property="a1Label" destination="wza-bj-gCY" id="GOH-i3-c5K"/>
+                        <outlet property="a1View" destination="mDg-ez-sQg" id="ONX-2z-41R"/>
+                        <outlet property="a2Label" destination="qPz-lX-hLN" id="QIi-SO-V6l"/>
+                        <outlet property="a2View" destination="FrD-68-h0q" id="ZyH-kY-p4b"/>
+                        <outlet property="a3Label" destination="ISj-hj-fG5" id="Ens-Iy-tit"/>
+                        <outlet property="a3View" destination="01e-Oz-IKk" id="N0U-Mb-uru"/>
+                        <outlet property="a4Label" destination="NJa-9Q-003" id="Kqc-3J-6li"/>
+                        <outlet property="a4View" destination="tsG-g5-EGt" id="ynC-XW-wCt"/>
+                        <outlet property="q1Label" destination="nIl-N6-kQN" id="4XE-Xi-Hhy"/>
+                        <outlet property="q1View" destination="zef-nP-zfY" id="3Pc-6E-rJx"/>
+                        <outlet property="q2Label" destination="hfW-Ta-zAt" id="3lS-dI-xbZ"/>
+                        <outlet property="q2View" destination="3Ep-SX-eyd" id="vaA-DS-gyk"/>
+                        <outlet property="q3Label" destination="zMB-2F-TV2" id="Ngf-ur-cMp"/>
+                        <outlet property="q3View" destination="WXg-ra-Uek" id="jBt-aq-Lza"/>
+                        <outlet property="q4Label" destination="iCJ-1A-vKK" id="b9T-Hl-yW1"/>
+                        <outlet property="q4View" destination="aCk-dF-BFa" id="eQB-2F-59P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mae-uE-gaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4tm-bn-VFc">
+                    <connections>
+                        <action selector="on0Tap:" destination="wrF-cy-fCi" id="Yxb-Re-9g0"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="H3K-sV-rcF">
+                    <connections>
+                        <action selector="on1Tap:" destination="wrF-cy-fCi" id="gjZ-8Q-wJi"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="mcO-lv-iW4">
+                    <connections>
+                        <action selector="on2Tap:" destination="wrF-cy-fCi" id="b3G-Eq-t7E"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Qz7-d5-3Nd">
+                    <connections>
+                        <action selector="on3Tap:" destination="wrF-cy-fCi" id="CRk-Xr-nWE"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="o1b-rg-kvP">
+                    <connections>
+                        <action selector="on4Tap:" destination="wrF-cy-fCi" id="eha-RZ-ak9"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="694" y="974"/>
         </scene>
