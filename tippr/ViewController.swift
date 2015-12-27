@@ -202,7 +202,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onTap(sender: AnyObject) {
-        view.endEditing(true)
+    //    view.endEditing(true)
     }
     
     func doubleTip(stringTip: String) -> Double{
