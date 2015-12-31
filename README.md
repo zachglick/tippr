@@ -39,7 +39,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+This app was a lot of fun to build. The viewcontroller model was difficult to understand at first, but once I got the hang of it I realized how much I could do. Manipulating the NSUserdefaults and connecting actions with objects were probably the two most difficult aspects of the project. Also, I had trouble getting an icon to show up for the app (which is why I didn't bother changing the ugly icon that remains in my final version).
 
 ## License
 
