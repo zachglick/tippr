@@ -4,7 +4,7 @@
 
 Submitted by: **Zach Glick**
 
-Time spent: **8** hours spent in total
+Time spent: **10** hours spent in total
 
 ## User Stories
 
@@ -25,7 +25,7 @@ The following **additional** features are implemented:
 * [X] App Icon
 * [X] Option to restore *all* parameters to default.
 * [X] Option to calculate fraction of bill/tip/total split between multiple people
-* [ ] Tipping etiquette guide
+* [X] Tipping etiquette guide
 
 
 
@@ -33,7 +33,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/LxNIZkF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/4cZP0ip.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
