@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tippr/ViewController.swift"
-            timestampString = "472791013.315897"
+            timestampString = "473294771.220145"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "310"
-            endingLineNumber = "310"
+            startingLineNumber = "304"
+            endingLineNumber = "304"
             landmarkName = "onCounterChanged(_:)"
             landmarkType = "5">
          </BreakpointContent>

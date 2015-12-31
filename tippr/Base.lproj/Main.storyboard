@@ -310,7 +310,7 @@
                                 <rect key="frame" x="-15" y="360" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label for Point" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iCJ-1A-vKK">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Practices" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iCJ-1A-vKK">
                                         <rect key="frame" x="8" y="25" width="304" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -331,7 +331,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wza-bj-gCY">
                                         <rect key="frame" x="8" y="0.0" width="304" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">Tipping is very customary in the US. In other places like Europe, it's factored into the bill. Some places like X see tipping as impolite</string>
+                                        <string key="text">Tipping is expected in many countries like the USA. In other places, such as the UK,  tip is factored into the price. Some cultures consider tipping impolite</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -345,7 +345,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qPz-lX-hLN">
                                         <rect key="frame" x="8" y="0.0" width="304" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2 Label A2</string>
+                                        <string key="text">20% is the standard rate. Some people adjust tip considering quality of service. Tipping is less expected at buffet and takeout restaurants</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -356,10 +356,9 @@
                                 <rect key="frame" x="0.0" y="350" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ISj-hj-fG5">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipping is customary in many other service industries including housekeeping, cab drivers, porters, valets, hairdressers, etc." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ISj-hj-fG5">
                                         <rect key="frame" x="8" y="0.0" width="304" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3 Label A3</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -373,7 +372,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NJa-9Q-003">
                                         <rect key="frame" x="8" y="0.0" width="304" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4 Label A4</string>
+                                        <string key="text">One should research local customs before tipping. When in doubt, keep in mind than many service workers earn minimum wage and depend on tips for a living</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>

@@ -46,12 +46,10 @@ class EtiquetteViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func on0Tap(sender: AnyObject) {
-        print("onTap0")
         close()
 
     }
     @IBAction func on1Tap(sender: AnyObject) {
-        print("onTap1")
         let defaults = NSUserDefaults.standardUserDefaults()
         let q = defaults.integerForKey("q")
         if(q != 1){
@@ -76,7 +74,6 @@ class EtiquetteViewController: UIViewController {
         }
     }
     @IBAction func on2Tap(sender: AnyObject) {
-        print("onTap2")
         let defaults = NSUserDefaults.standardUserDefaults()
         let q = defaults.integerForKey("q")
         if(q != 2){
@@ -101,7 +98,6 @@ class EtiquetteViewController: UIViewController {
         }
     }
     @IBAction func on3Tap(sender: AnyObject) {
-        print("onTap3")
         let defaults = NSUserDefaults.standardUserDefaults()
         let q = defaults.integerForKey("q")
         if(q != 3){
@@ -126,7 +122,6 @@ class EtiquetteViewController: UIViewController {
         }
     }
     @IBAction func on4Tap(sender: AnyObject) {
-        print("onTap4")
         let defaults = NSUserDefaults.standardUserDefaults()
         let q = defaults.integerForKey("q")
         if(q != 4){
@@ -175,7 +170,6 @@ class EtiquetteViewController: UIViewController {
     }
     func refreshView(){
         
-            print("View Refreshed!")
             let defaults = NSUserDefaults.standardUserDefaults()
             let darkColor = UIColor(red: 89/255.0, green: 119/255.0, blue: 89/255, alpha: 1.0)
             let lightColor = UIColor(red: 189/255.0, green: 216/255.0, blue: 189/255, alpha: 1.0)

@@ -27,7 +27,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("View Did Load")
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refresh", name: UIApplicationDidBecomeActiveNotification, object: nil)
         super.title = "tippr"
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -93,14 +92,12 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        print("View Will Appear")
         let defaults = NSUserDefaults.standardUserDefaults()
         
         
         if(defaults.objectForKey("oldDate") != nil){
             let interval = NSDate().timeIntervalSinceDate(defaults.objectForKey("oldDate") as! NSDate!)
             if(interval > 600.0){
-                print("TIME OUT")
                 defaults.setDouble(0.0, forKey: "bill")
                 defaults.setInteger(1, forKey: "counter")
                 defaults.setBool(true, forKey: "defLight")
@@ -111,7 +108,6 @@ class ViewController: UIViewController {
                 totalLabel.text = "$0.00"
                 billField.text = ""
             }
-            print("interval \(interval/60.0) minutes")
             
         }
         
@@ -150,7 +146,6 @@ class ViewController: UIViewController {
                     self.AnimatedView2.center.y = 125
                     self.counterView.center.x = 57
                 if(defaults.integerForKey("counter") > 1){
-                    print("trueue \(defaults.integerForKey("counter"))"  )
                     self.counterLabel2.center.x = 260
                 }
             })
@@ -196,7 +191,6 @@ class ViewController: UIViewController {
     }
 
     func refresh(){
-        print("Refresh")
         onEditingChanged(self)
    
     }

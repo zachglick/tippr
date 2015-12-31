@@ -102,7 +102,6 @@ class SettingsViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setBool(lightSwitch.on, forKey: "defLight")
         defaults.synchronize()
-        print(defaults.boolForKey("defLight"))
         refreshView()
     }
     /*
@@ -123,7 +122,6 @@ class SettingsViewController: UIViewController {
     }
     
     func refreshView() {
-        print("View Refreshed!")
         let defaults = NSUserDefaults.standardUserDefaults()
         let darkColor = UIColor(red: 89/255.0, green: 119/255.0, blue: 89/255, alpha: 1.0)
         let lightColor = UIColor(red: 189/255.0, green: 216/255.0, blue: 189/255, alpha: 1.0)
